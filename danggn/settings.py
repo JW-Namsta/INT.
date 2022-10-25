@@ -83,9 +83,12 @@ DATABASES = {
     'default' : {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'danggn_product',
-        'USER': 'root',
-        'PASSWORD': 'asd123!@',
-        'HOST': 'localhost',
+        # 'USER': 'root',
+        # 'PASSWORD': 'asd123!@',
+        # 'HOST': 'localhost',
+        'USER' : 'junwoohero',
+        'PASSWORD' : 'wkdrh12#$',
+        'HOST' : 'junwoohero.mysql.pythonanywhere-services.com',
         'PORT': '3306',
         'OPTIONS': {'charset': 'utf8mb4'},
     }
