@@ -8,6 +8,9 @@ import pandas as pd
 from django.db.models import Q
 
 # Create your views here.
+def index(request) :
+    return render(request, 'api/index.html')
+
 @api_view(['GET'])
 def HelloAPI(request) :
     return Response("Hello API!")
