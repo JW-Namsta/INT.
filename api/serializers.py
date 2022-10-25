@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Article, DisplayData
+from .models import Article, DisplayData, Macbook
 
 class DataSerializer(serializers.ModelSerializer) :
     class Meta :
@@ -9,4 +9,9 @@ class DataSerializer(serializers.ModelSerializer) :
 class ArticleSerializer(serializers.ModelSerializer) :
     class Meta :
         model = Article
+        fields = '__all__'
+
+class MacbookSerializer(serializers.ModelSerializer) :
+    class Meta :
+        model = Macbook
         fields = '__all__'

@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from .models import DisplayData, Article
-from .serializers import DataSerializer, ArticleSerializer
+from .models import DisplayData, Article, Macbook
+from .serializers import DataSerializer, ArticleSerializer, MacbookSerializer
 import pandas as pd
+
+from django.db.models import Q
 
 # Create your views here.
 @api_view(['GET'])
@@ -24,3 +26,9 @@ def article_html(request) :
 
 def InsertCSV(request) :
     pass
+
+@api_view(['GET'])
+def macbooktest(request) :
+    macbook = Macbook.objects.filter(Q(id__lt=10)|Q(id=32))[2:8]
+    serializer = MacbookSerializer(macbook, many=True)
+    return Response(serializer.data)
